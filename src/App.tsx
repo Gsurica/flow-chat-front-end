@@ -1,11 +1,7 @@
-import './App.css'
+import { RouterApp } from './shared/routes/routes'
 
 function App() {
-  return (
-    <div>
-
-    </div>
-  )
+  return <RouterApp />
 }
 
 export default App
