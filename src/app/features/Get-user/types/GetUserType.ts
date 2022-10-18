@@ -1,3 +1,3 @@
 export type GetUserType = {
-  username: string 
+  username: string | undefined
 }

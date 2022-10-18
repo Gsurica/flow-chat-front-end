@@ -11,7 +11,7 @@ const initialState: GetUser = {
 }
 
 export const getUser = createAsyncThunk<IGetUser[], {
-  username: string 
+  username: string | undefined
 }>(
   "user/getUser", async ({ username }: GetUserType, thunkAPi) => {
     try {
