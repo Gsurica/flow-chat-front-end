@@ -1,7 +1,8 @@
 import { Container, FormDiv, Form, FormInputs, FormButton, FormTittleContainer, FormTittle, FormPhrase } from "./styles/Login.styles"
-import { RootState, useAppDispatch, useAppSelector } from "../../app/store"
+import { useAppDispatch } from "../../app/store"
 import { FormEvent, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { loginUser } from "../../app/features/Login-user/Login-user-slice"
 
 export const Login = () => {
 
@@ -13,7 +14,8 @@ export const Login = () => {
 
   const formHandle = (e: FormEvent) => {
     e.preventDefault()
-    redirect(`/home`)
+    dispatch(loginUser({ username, password }))
+    redirect(`/home/${username}`);
   }
 
   return (
