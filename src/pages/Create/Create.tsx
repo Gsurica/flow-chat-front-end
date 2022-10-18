@@ -1,7 +1,8 @@
 import { Container, Form, FormButton, FormDiv, FormInputs, FormPhrase, FormTittle, FormTittleContainer } from "./styles/Create.styles"
 import { useAppDispatch } from "../../app/store"
 import { FormEvent, useState } from "react"
-import { CreateUser } from "../../app/features/Create-user-slice/Create-user-slice"
+import { useNavigate } from "react-router-dom"
+import { createUser } from "../../app/features/Create-user/Create-user-slice"
 
 export const Create = () => {
 
@@ -10,10 +11,12 @@ export const Create = () => {
   const [password, setPassword] = useState<string>("")
 
   const dispatch = useAppDispatch()
+  const redirect = useNavigate()
 
   const formHandle = (e: FormEvent) => {
     e.preventDefault()
-    dispatch(CreateUser({ username, password, email }))
+    dispatch(createUser({ username, email, password }))
+    redirect('/login')
   }
 
   return (

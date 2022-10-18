@@ -8,15 +8,13 @@ import { Header } from "../components/Header/Header";
 export const RouterApp = () => {
   return (
     <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={ 
           <Navigate to="/login" /> } />
           <Route path="/login" element={ <Login /> } />
           <Route path="/create" element={ <Create /> } />
-          <Route path="/home" element={ <Home /> } />
+          <Route path="/home/:id" element={ <Home /> } />
         </Routes>
-        <Footer />
     </BrowserRouter>
   )
 }

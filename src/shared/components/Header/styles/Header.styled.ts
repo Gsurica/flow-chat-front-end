@@ -34,6 +34,7 @@ export const Uinfo = styled.div`
 export const HTittle = styled.h1`
   font-weight: bold;
   letter-spacing: 5px;
+  font-size: 16px;
 `;
 
 export const HLogin = styled.div`

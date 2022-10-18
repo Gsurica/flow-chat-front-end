@@ -1,10 +1,11 @@
 import { Container, FormDiv, Form, FormInputs, FormButton, FormTittleContainer, FormTittle, FormPhrase } from "./styles/Login.styles"
-import { useAppDispatch } from "../../app/store"
-import { LoginUser } from "../../app/features/Login-user-slice/Login-user-slice"
+import { RootState, useAppDispatch, useAppSelector } from "../../app/store"
 import { FormEvent, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export const Login = () => {
 
+  const redirect = useNavigate()
   const dispatch = useAppDispatch()
 
   const [username, setUsername] = useState<string>("")
@@ -12,7 +13,7 @@ export const Login = () => {
 
   const formHandle = (e: FormEvent) => {
     e.preventDefault()
-    dispatch(LoginUser({ username, password }))
+    redirect(`/home`)
   }
 
   return (
